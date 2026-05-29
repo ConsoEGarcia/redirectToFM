@@ -29,12 +29,17 @@
           } else {
             document.body.innerHTML = "<h3>Invalid redirect domain</h3>";
           }*/
-          window.open(target);
+          //window.open(target);
           window.location.href = target;
-          WaitAFew();
+
+          setTimeout(() => {
+            // This code runs after 1 second
+            const newWin = window.open(target, "_blank");
+            window.close;
+          }, 5000);
+          //WaitAFew();
           //window.close;
-          const newWin = window.open(target, "_blank");
-          window.close;
+          
 
           
           
