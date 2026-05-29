@@ -3,17 +3,6 @@
 <head>
   <title>Redirecting...</title>
   <script>
-    // 1. Define a reusable sleep function
-    const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-    
-    async function WaitAFew() {
-      console.log("Starting...");
-      // 2. Pause for 1000 milliseconds (1 second)
-      await sleep(5000);
-      console.log("1 second later!");
-      
-    }
-    
     function redirect() {
       const params = new URLSearchParams(window.location.search);
       const target = params.get("rerouteTo");
@@ -29,21 +18,7 @@
           } else {
             document.body.innerHTML = "<h3>Invalid redirect domain</h3>";
           }*/
-          //window.open(target);
           window.location.href = target;
-
-          /*setTimeout(() => {
-            // This code runs after 1 second
-            const newWin = window.open(target, "_blank");
-            window.close;
-          }, 5000);*/
-          //WaitAFew();
-          //window.close;
-          
-
-          
-          
-
 
         } catch {
           document.body.innerHTML = "<h3>Invalid URL</h3>";
