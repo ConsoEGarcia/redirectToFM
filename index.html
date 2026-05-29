@@ -3,6 +3,16 @@
 <head>
   <title>Redirecting...</title>
   <script>
+    // 1. Define a reusable sleep function
+    const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+    
+    async function WaitAFew() {
+      console.log("Starting...");
+      // 2. Pause for 1000 milliseconds (1 second)
+      await sleep(2000);
+      console.log("1 second later!");
+    }
+    
     function redirect() {
       const params = new URLSearchParams(window.location.search);
       const target = params.get("rerouteTo");
@@ -20,6 +30,7 @@
           }*/
           //window.open(target);
           window.location.href = target;
+          WaitAFew();
           //window.close;
 
           
