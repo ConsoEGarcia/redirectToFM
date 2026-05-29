@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirecting...</title>
+  <script>
+    function redirect() {
+      const params = new URLSearchParams(window.location.search);
+      const target = params.get("rerouteTo");
+
+      if (target) {
+        try {
+          const url = new URL(target);
+
+          // OPTIONAL: restrict domains for safety
+          /*const allowed = ["myotherwebsite.com"];
+          if (allowed.includes(url.hostname)) {
+            window.location.href = target;
+          } else {
+            document.body.innerHTML = "<h3>Invalid redirect domain</h3>";
+          }*/
+          window.location.href = target;
+
+        } catch {
+          document.body.innerHTML = "<h3>Invalid URL</h3>";
+        }
+      } else {
+        document.body.innerHTML = "<h3>No redirect parameter found</h3>";
+      }
+    }
+  </script>
+</head>
+<body onload="redirect()">
+  <p>Redirecting...</p>
+</body>
+</html>
