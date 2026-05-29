@@ -18,9 +18,14 @@
           } else {
             document.body.innerHTML = "<h3>Invalid redirect domain</h3>";
           }*/
-          window.open(target);
-          //window.location.href = target;
-          window.close;
+          //window.open(target);
+          window.location.href = target;
+          //window.close;
+
+          
+          const newWin = window.open(target, "_blank");
+          window.close();
+
 
         } catch {
           document.body.innerHTML = "<h3>Invalid URL</h3>";
